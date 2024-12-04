@@ -29,15 +29,9 @@ public class Day01 extends AoC {
 
     public int part2() {
         int similarity = 0;
-        // TODO: calculate similarity value
+        for (int num : left) {
+            similarity += num * Collections.frequency(right, num);
+        }
         return similarity;
-    }
-
-    public List<Integer> getLeftList() {
-        return left;
-    }
-
-    public List<Integer> getRightList() {
-        return right;
     }
 }
