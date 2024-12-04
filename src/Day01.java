@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Day01 extends AoC {
-    private final List<Integer> left = new ArrayList<Integer>();
-    private final List<Integer> right = new ArrayList<Integer>();
+    private final List<Integer> left = new ArrayList<>();
+    private final List<Integer> right = new ArrayList<>();
 
     Day01(String filePath) throws FileNotFoundException {
         super(filePath);
