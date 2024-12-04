@@ -15,6 +15,7 @@ public class Day01 extends AoC {
             left.add(s.nextInt());
             right.add(s.nextInt());
         }
+        s.close();
         Collections.sort(left);
         Collections.sort(right);
     }
