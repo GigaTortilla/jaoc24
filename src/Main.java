@@ -1,15 +1,14 @@
+import java.io.FileNotFoundException;
+import java.io.File;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!\n");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Day01 solution = new Day01("inputs/day01.txt");
+        System.out.println("The solution for " + solution.getClass().getName() + " part 1 is " + solution.part1());
+        System.out.println("The solution for " + solution.getClass().getName() + " part 2 is " + solution.part2());
     }
 }
