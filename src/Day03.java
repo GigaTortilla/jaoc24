@@ -1,18 +1,18 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Day03 extends AoC {
     private final String content;
+
     Day03(String filePath) throws FileNotFoundException {
         super(filePath);
 
         // read complete file at once due to small size of ~20KB
         try {
-            content = Files.readString(Path.of(filePath));
+            content = Files.readString(dayInput.toPath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

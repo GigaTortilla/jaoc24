@@ -8,7 +8,7 @@ public class Day02 extends AoC {
 
     Day02(String filePath) throws FileNotFoundException {
         super(filePath);
-        Scanner sc = new Scanner(new File(filePath));
+        Scanner sc = new Scanner(dayInput);
         while (sc.hasNextLine()) {
             List<Integer> l = new ArrayList<>();
             String line = sc.nextLine();

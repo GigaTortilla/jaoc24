@@ -7,7 +7,7 @@ public class AoC {
     AoC(String filePath) throws FileNotFoundException {
         dayInput = new File(filePath);
 
-        if (!dayInput.exists()) {
+        if (!dayInput.exists() || !dayInput.isFile()) {
             throw new FileNotFoundException("File not found: " + dayInput.getAbsolutePath());
         }
     }
