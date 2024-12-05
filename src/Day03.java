@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,6 +23,7 @@ public class Day03 extends AoC {
 
     public int part1() {
         int sum = 0;
+
         Matcher mInstruction = Pattern.compile("mul\\((\\d{1,3}),(\\d{1,3})\\)").matcher(content);
         while (mInstruction.find()) {
             sum += Integer.parseInt(mInstruction.group(1)) * Integer.parseInt(mInstruction.group(2));
@@ -32,7 +34,19 @@ public class Day03 extends AoC {
 
     public int part2() {
         int sum = 0;
-        String[] disabledSections = content.split("don't\\(\\)");
+        boolean enabled = true;
+        Matcher m = Pattern.compile("do\\(\\)|don't\\(\\)|mul\\((\\d{1,3}),(\\d{1,3})\\)").matcher(content);
+        while (m.find()) {
+            if (m.group().equals("don't()")) {
+                enabled = false;
+            } else if (m.group().equals("do()")) {
+                enabled = true;
+            } else {
+                if (m.groupCount() > 1 && enabled) {
+                    sum += Integer.parseInt(m.group(1)) * Integer.parseInt(m.group(2));
+                }
+            }
+        }
         return sum;
     }
 }
