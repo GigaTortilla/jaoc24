@@ -20,12 +20,10 @@ public class Day03 extends AoC {
 
     public int part1() {
         int sum = 0;
-
         Matcher mInstruction = Pattern.compile("mul\\((\\d{1,3}),(\\d{1,3})\\)").matcher(content);
         while (mInstruction.find()) {
             sum += Integer.parseInt(mInstruction.group(1)) * Integer.parseInt(mInstruction.group(2));
         }
-
         return sum;
     }
 
