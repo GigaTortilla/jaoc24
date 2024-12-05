@@ -17,5 +17,9 @@ public class Main {
         Day03 solution03 = new Day03("inputs/day03.txt");
         System.out.println("The solution for " + solution03.getClass().getName() + " part 1 is " + solution03.part1());
         System.out.println("The solution for " + solution03.getClass().getName() + " part 2 is " + solution03.part2());
+
+        Day04 solution04 = new Day04("inputs/day04.txt");
+        System.out.println("The solution for " + solution04.getClass().getName() + " part 1 is " + solution04.part1());
+        System.out.println("The solution for " + solution04.getClass().getName() + " part 2 is " + solution04.part2());
     }
 }
