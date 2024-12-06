@@ -15,6 +15,7 @@ public class Day04 extends AoC {
         while (sc.hasNextLine()) {
             lines.add(sc.nextLine());
         }
+        sc.close();
         searchString = "XMAS";
         reverseSearchString = new StringBuilder(searchString).reverse().toString();
     }
