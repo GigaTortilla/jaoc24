@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
+        long startTime = System.nanoTime();
+
         Day01 solution01 = new Day01("inputs/day01.txt");
         System.out.println("The solution01 for " + solution01.getClass().getName() + " part 1 is " + solution01.part1());
         System.out.println("The solution01 for " + solution01.getClass().getName() + " part 2 is " + solution01.part2());
@@ -21,5 +23,8 @@ public class Main {
         Day04 solution04 = new Day04("inputs/day04.txt");
         System.out.println("The solution for " + solution04.getClass().getName() + " part 1 is " + solution04.part1());
         System.out.println("The solution for " + solution04.getClass().getName() + " part 2 is " + solution04.part2());
+
+        long endTime = System.nanoTime();
+        System.out.println("Completed in " + (endTime - startTime) / 1000000 + "ms");
     }
 }
