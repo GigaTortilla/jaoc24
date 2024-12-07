@@ -34,6 +34,10 @@ public class Main {
         System.out.println("The solution for " + solution06.getClass().getName() + " part 1 is " + solution06.partOne());
         System.out.println("The solution for " + solution06.getClass().getName() + " part 2 is " + solution06.partTwo());
 
+        Day07 solution07 = new Day07("inputs/day07.txt");
+        System.out.println("The solution for " + solution07.getClass().getName() + " part 1 is " + solution07.partOne());
+        System.out.println("The solution for " + solution07.getClass().getName() + " part 2 is " + solution07.partTwo());
+
         long endTime = System.nanoTime();
         System.out.println("Completed in " + (endTime - startTime) / 1000000 + "ms");
     }
