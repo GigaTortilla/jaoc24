@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ public class Day04 extends AoC {
 
     Day04(String filePath) throws FileNotFoundException {
         super(filePath);
-        Scanner sc = new Scanner(new File(filePath));
+        Scanner sc = new Scanner(dayInput);
         while (sc.hasNextLine()) {
             lines.add(sc.nextLine());
         }

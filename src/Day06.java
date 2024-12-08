@@ -32,8 +32,6 @@ public class Day06 extends AoC {
             lineNumber++;
         }
         borderSouth = lineNumber;
-        System.out.println(borderEast);
-        System.out.println(borderSouth);
     }
 
     public int partOne() {
