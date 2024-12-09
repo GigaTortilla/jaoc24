@@ -38,7 +38,6 @@ public class Day08 extends AoC {
 
     public int partOne() {
         List<Point> antinodes = new ArrayList<>();
-        System.out.println(antennas.get('a'));
         for (char c : antennas.keySet()) {
             for (Point p1 : antennas.get(c)) {
                 List<Point> points = new ArrayList<>(antennas.get(c));
