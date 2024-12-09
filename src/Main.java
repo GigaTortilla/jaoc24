@@ -40,6 +40,10 @@ public class Main {
         System.out.println("The solution for " + solution07.getClass().getName()
                 + " part 2 is " + solution07.partTwoRecursive());
 
+        Day08 solution08 = new Day08("inputs/day08.txt");
+        System.out.println("The solution for " + solution08.getClass().getName() + " part 1 is " + solution08.partOne());
+        System.out.println("The solution for " + solution08.getClass().getName() + " part 2 is " + solution08.partTwo());
+
         long endTime = System.nanoTime();
         System.out.println("Completed in " + (endTime - startTime) / 1000000 + "ms");
     }
