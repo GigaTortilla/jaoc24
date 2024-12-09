@@ -29,8 +29,6 @@ public class Main {
         System.out.println("The solution for " + solution05.getClass().getName() + " part 2 is " + solution05.part2());
 
         Day06 solution06 = new Day06("inputs/day06.txt");
-        Day06 test06 = new Day06("inputs/day06Test.txt");
-        System.out.println("Day06 Test: Should equal (41) : " + test06.partOne());
         System.out.println("The solution for " + solution06.getClass().getName() + " part 1 is " + solution06.partOne());
         System.out.println("The solution for " + solution06.getClass().getName() + " part 2 is " + solution06.partTwo());
 
