@@ -1,3 +1,5 @@
+import java.io.File
+
 fun main() {
 
 
@@ -43,10 +45,17 @@ fun main() {
     println("The solution for " + solution08.javaClass.name + " part 1 is " + solution08.part1())
     println("The solution for " + solution08.javaClass.name + " part 2 is " + solution08.part2())
 
-    val solution09 = Day09("inputs/day09.txt")
-    println("The solution for " + solution09.javaClass.name + " part 1 is " + solution09.part1())
-    println("The solution for " + solution09.javaClass.name + " part 2 is " + solution09.part2())
+    day9()
 
     val endTime = System.nanoTime()
     println("Completed in " + (endTime - startTime) / 1000000 + "ms")
+}
+
+fun day9() {
+    val diskMap = File("inputs/day09.txt").readText()
+    val compressedDisk = expandBlocks(diskMap).reorder()
+    val diskSize = compressedDisk.size * 4 / 1024
+    val filesystemChecksum = compressedDisk.checksum()
+    println("Disk size after compression: $diskSize kB")
+    println("File system checksum: $filesystemChecksum")
 }
