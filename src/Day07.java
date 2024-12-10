@@ -37,25 +37,25 @@ public class Day07 extends AoC {
         return (new Equation(result, values, operators));
     }
 
-    public long partOne() {
+    public long part1() {
         return equations.stream()
                 .filter(equation -> equation.calculateResults().contains(equation.target))
                 .mapToLong(equation -> equation.target).sum();
     }
 
-    public long partOneRecursive() {
+    public long part1recursive() {
         return equations.stream()
                 .filter(equation -> equation.checkEquation(false))
                 .mapToLong(equation -> equation.target).sum();
     }
 
-    public long partTwo() {
+    public long part2() {
         return eqWithConcat.stream()
                 .filter(equation -> equation.calculateResults().contains(equation.target))
                 .mapToLong(equation -> equation.target).sum();
     }
 
-    public long partTwoRecursive() {
+    public long part2recursive() {
         long sum = 0;
         for (Equation equation : equations) {
             if (equation.checkEquation(true))

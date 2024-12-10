@@ -29,22 +29,22 @@ public class Main {
         System.out.println("The solution for " + solution05.getClass().getName() + " part 2 is " + solution05.part2());
 
         Day06 solution06 = new Day06("inputs/day06.txt");
-        System.out.println("The solution for " + solution06.getClass().getName() + " part 1 is " + solution06.partOne());
-        System.out.println("The solution for " + solution06.getClass().getName() + " part 2 is " + solution06.partTwo());
+        System.out.println("The solution for " + solution06.getClass().getName() + " part 1 is " + solution06.part1());
+        System.out.println("The solution for " + solution06.getClass().getName() + " part 2 is " + solution06.part2());
 
         Day07 solution07 = new Day07("inputs/day07.txt");
         System.out.println("The solution for " + solution07.getClass().getName()
-                + " part 1 is " + solution07.partOneRecursive());
+                + " part 1 is " + solution07.part1recursive());
         System.out.println("The solution for " + solution07.getClass().getName()
-                + " part 2 is " + solution07.partTwoRecursive());
+                + " part 2 is " + solution07.part2recursive());
 
         Day08 solution08 = new Day08("inputs/day08.txt");
-        System.out.println("The solution for " + solution08.getClass().getName() + " part 1 is " + solution08.partOne());
-        System.out.println("The solution for " + solution08.getClass().getName() + " part 2 is " + solution08.partTwo());
+        System.out.println("The solution for " + solution08.getClass().getName() + " part 1 is " + solution08.part1());
+        System.out.println("The solution for " + solution08.getClass().getName() + " part 2 is " + solution08.part2());
 
         Day09 solution09 = new Day09("inputs/day09.txt");
-        System.out.println("The solution for " + solution09.getClass().getName() + " part 1 is " + solution09.partOne());
-        System.out.println("The solution for " + solution09.getClass().getName() + " part 2 is " + solution09.partTwo());
+        System.out.println("The solution for " + solution09.getClass().getName() + " part 1 is " + solution09.part1());
+        System.out.println("The solution for " + solution09.getClass().getName() + " part 2 is " + solution09.part2());
 
         long endTime = System.nanoTime();
         System.out.println("Completed in " + (endTime - startTime) / 1000000 + "ms");

@@ -36,7 +36,7 @@ public class Day08 extends AoC {
                 && p.y < borderY && p.y >= 0;
     }
 
-    public int partOne() {
+    public int part1() {
         List<Point> antinodes = new ArrayList<>();
         for (char c : antennas.keySet()) {
             for (Point p1 : antennas.get(c)) {
@@ -51,7 +51,7 @@ public class Day08 extends AoC {
         return antinodes.size();
     }
 
-    public int partTwo() {
+    public int part2() {
         return 0;
     }
 }

@@ -34,7 +34,7 @@ public class Day06 extends AoC {
         borderSouth = lineNumber;
     }
 
-    public int partOne() {
+    public int part1() {
         List<Point> visitedPositions = new ArrayList<>();
         visitedPositions.add(new Point(patrolGuard.getPosition()));
         Point nextPosition = patrolGuard.getNextPosition();
@@ -53,7 +53,7 @@ public class Day06 extends AoC {
         return visitedPositions.size();
     }
 
-    public int partTwo() {
+    public int part2() {
         return 0;
     }
 }

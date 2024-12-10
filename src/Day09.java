@@ -25,12 +25,12 @@ public class Day09 extends AoC {
         return output.toString();
     }
 
-    public int partOne() {
+    public int part1() {
         System.out.println(expandBlocks(testDisk));
         return 0;
     }
 
-    public int partTwo() {
+    public int part2() {
         return 0;
     }
 }
