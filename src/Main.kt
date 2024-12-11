@@ -22,7 +22,7 @@ fun main() {
     val solution04 = Day04("inputs/day04.txt")
     println("The solution for " + solution04.javaClass.name + " part 1 is " + solution04.part1())
     println("The solution for " + solution04.javaClass.name + " part 2 is " + solution04.part2())
-
+/*
     val solution05 = Day05("inputs/day05.txt")
     println("The solution for " + solution05.javaClass.name + " part 1 is " + solution05.part1())
     println("The solution for " + solution05.javaClass.name + " part 2 is " + solution05.part2())
@@ -44,7 +44,7 @@ fun main() {
     val solution08 = Day08("inputs/day08.txt")
     println("The solution for " + solution08.javaClass.name + " part 1 is " + solution08.part1())
     println("The solution for " + solution08.javaClass.name + " part 2 is " + solution08.part2())
-
+*/
     day9()
 
     val endTime = System.nanoTime()
@@ -52,10 +52,20 @@ fun main() {
 }
 
 fun day9() {
-    val diskMap = File("inputs/day09.txt").readText()
-    val compressedDisk = expandBlocks(diskMap).reorder()
-    val diskSize = compressedDisk.size * 4 / 1024
-    val filesystemChecksum = compressedDisk.checksum()
+    val diskMap = expandBlocks(File("inputs/day09.txt").readText())
+    diskMap.reorder()
+    val diskSize = diskMap.size * 4 / 1024
+    val filesystemChecksum = diskMap.checksum()
     println("Disk size after compression: $diskSize kB")
     println("File system checksum: $filesystemChecksum")
+
+    // test case
+    val expandedMap = expandBlocks("2333133121414131402")
+    expandedMap.println()
+    val freeSpaces = expandedMap.getFreeBlocks()
+    freeSpaces.println()
+    val usedSpaces = expandedMap.getUsedBlocks()
+    usedSpaces.println()
 }
+
+fun Any?.println() = println(this)

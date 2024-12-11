@@ -18,9 +18,33 @@ fun MutableList<Int>.reorder(): List<Int> {
 fun expandBlocks(blkStr: String): MutableList<Int> {
     val blkList = mutableListOf<Int>()
     blkStr.indices.forEach { i ->
-        repeat((0..<blkStr[i].code - '0'.code).count()) {
+        repeat((0 until blkStr[i].code - '0'.code).count()) {
             blkList += if (i % 2 == 0) i / 2 else -1
         }
     }
     return blkList
+}
+
+data class Block(val start: Int, val len: Int)
+
+// automatically sorted by start index
+fun List<Int>.getFreeBlocks(): List<Block> {
+    val blkList = mutableListOf<Block>()
+    var i = 0
+    while (i < this.size) if (this[i] == -1) {
+        val blkLen = this.subList(i, this.size).indexOfFirst { it != -1 }
+        blkList.add(Block(i, blkLen))
+        i += blkLen
+    }
+    else i++
+    return blkList
+}
+
+// map of FileID to the block by start and length
+fun List<Int>.getUsedBlocks(): Map<Int, Block> {
+    val usedBlocks: MutableMap<Int, Block> = mutableMapOf()
+    val blkLoc = this.mapIndexed { _, v -> v to this.indexOfFirst { it == v } }.toMap().filter { it.key >= 0 }
+    val blkLen = this.groupingBy { it }.eachCount().filter { it.key >= 0 }
+    for (entry in blkLoc) blkLen[entry.key]?.let { Block(entry.value, it) }?.let { usedBlocks.put(entry.key, it) }
+    return usedBlocks.toSortedMap().toMutableMap()
 }
