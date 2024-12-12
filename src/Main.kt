@@ -66,6 +66,8 @@ fun day9() {
     freeSpaces.println()
     val usedSpaces = expandedMap.getUsedBlocks()
     usedSpaces.println()
+    usedSpaces.moveIntoSpaces(freeSpaces)
+    usedSpaces.println()
 }
 
 fun Any?.println() = println(this)
