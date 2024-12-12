@@ -56,18 +56,25 @@ fun day9() {
     diskMap.reorder()
     val diskSize = diskMap.size * 4 / 1024
     val filesystemChecksum = diskMap.checksum()
-    println("Disk size after compression: $diskSize kB")
-    println("File system checksum: $filesystemChecksum")
+    println("d9p1 | Disk size after compression: $diskSize kB")
+    println("d9p1 | File system checksum: $filesystemChecksum")
 
     // test case
     val expandedMap = expandBlocks("2333133121414131402")
-    expandedMap.println()
     val freeSpaces = expandedMap.getFreeBlocks()
-    freeSpaces.println()
-    val usedSpaces = expandedMap.getUsedBlocks()
-    usedSpaces.println()
-    usedSpaces.moveIntoSpaces(freeSpaces)
-    usedSpaces.println()
+    val usedBlocks = expandedMap.getUsedBlocks()
+    val testDisk = usedBlocks.moveIntoSpaces(freeSpaces).rebuildDisk()
+    assert(testDisk.checksum() == 2858L)
+
+    // part 2
+    val diskMap2 = expandBlocks(File("inputs/day09.txt").readText())
+    val freeSpaces2 = diskMap2.getFreeBlocks()
+    val usedBlocks2 = diskMap2.getUsedBlocks()
+    val sortedDiskMap2 = usedBlocks2.moveIntoSpaces(freeSpaces2).rebuildDisk()
+    val diskSize2 = sortedDiskMap2.size * 4 / 1024
+    val sumPart2 = sortedDiskMap2.checksum()
+    println("d9p2 | Disk size after compression: $diskSize2 kB")
+    println("d9p2 | File system checksum: $sumPart2")
 }
 
 fun Any?.println() = println(this)
