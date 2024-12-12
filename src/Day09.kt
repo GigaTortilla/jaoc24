@@ -1,6 +1,6 @@
 fun List<Int>.checksum(): Long {
     var sum = 0L
-    forEachIndexed { i, n -> sum += i * n }
+    forEachIndexed { i, n -> if (n >= 0) sum += i * n }
     return sum
 }
 
@@ -64,7 +64,9 @@ fun MutableMap<Int, Block>.moveIntoSpaces(spaces: MutableList<Block>): MutableMa
     return this
 }
 
-fun MutableMap<Int, Block>.expandMapToList(): List<Int> {
-    val diskMap = listOf<Int>()
+fun MutableMap<Int, Block>.rebuildDisk(): List<Int> {
+    val lastBlk = this.values.maxBy { it.start }
+    val diskMap = MutableList(lastBlk.start + lastBlk.len) { -1 }
+    this.forEach { (id, blk) -> for (i in blk.start until blk.start + blk.len) diskMap[i] = id }
     return diskMap
 }
