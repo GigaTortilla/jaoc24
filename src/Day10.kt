@@ -10,12 +10,6 @@ class Day10(filepath: String) {
         terrainMap = getTerrain(filepath)
         borderY = terrainMap.size
         borderX = terrainMap[0].size
-
-        terrainMap.forEach { it.forEach { pos ->
-            if (pos == 0) {
-                // TODO get paths
-            }
-        } }
     }
 
     private fun getTerrain(path: String): List<List<Int>> {
