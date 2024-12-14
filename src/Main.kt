@@ -47,6 +47,8 @@ fun main() {
 */
     day9()
 
+    Day10("inputs/day10.txt")
+
     val endTime = System.nanoTime()
     println("Completed in " + (endTime - startTime) / 1000000 + "ms")
 }
