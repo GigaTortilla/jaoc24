@@ -27,7 +27,25 @@ import org.junit.jupiter.api.Assertions.*
      }
 
      @Test
-     fun checkSumOfPeaks() {
+     fun sumOfPeaks() {
          assertEquals(36, testCase.getScores())
+     }
+
+     @Test
+     fun checkDistinctPaths() {
+         assertEquals(20, testCase.getDistinctPathCount(2, 0))
+         assertEquals(24, testCase.getDistinctPathCount(4, 0))
+         assertEquals(10, testCase.getDistinctPathCount(4, 2))
+         assertEquals(4, testCase.getDistinctPathCount(6, 4))
+         assertEquals(1, testCase.getDistinctPathCount(2, 5))
+         assertEquals(4, testCase.getDistinctPathCount(5, 5))
+         assertEquals(5, testCase.getDistinctPathCount(0, 6))
+         assertEquals(8, testCase.getDistinctPathCount(6, 6))
+         assertEquals(5, testCase.getDistinctPathCount(1, 7))
+     }
+
+     @Test
+     fun sumOfPaths() {
+         assertEquals(81, testCase.getScores(true))
      }
  }
