@@ -47,7 +47,11 @@ fun main() {
 */
     day9()
 
-    Day10("inputs/day10.txt")
+    val solution10 = Day10("inputs/day10.txt")
+    val d10p1 = solution10.getScores()
+    val d10p2 = solution10.getScores(true)
+    println("The solution for day 10 part 1 is $d10p1")
+    println("The solution for day 10 part 2 is $d10p2")
 
     val endTime = System.nanoTime()
     println("Completed in " + (endTime - startTime) / 1000000 + "ms")

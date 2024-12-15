@@ -22,6 +22,14 @@ class Day10(filepath: String) {
         return terrain
     }
 
+    fun getDistinctPathCount(x: Int, y: Int, value: Int = 0): Int {
+        if (value == 9) return 1 else {
+            val directions = getNextPos(x, y, value)
+            if (directions.isEmpty()) return 0
+            return directions.sumOf { (newX, newY) -> getDistinctPathCount(newX, newY, terrainMap[newY][newX]) }
+        }
+    }
+
     fun getPathCount(x: Int, y: Int, value: Int = 0): Int {
         if (value == 9) {
             if (peakBuffer.contains(x to y)) return 0
@@ -44,12 +52,15 @@ class Day10(filepath: String) {
         return out
     }
 
-    fun getScores(): Int {
+    fun getScores(distinctPaths: Boolean = false): Int {
         var sum = 0
         terrainMap.forEachIndexed { y, row -> row.forEachIndexed { x, height ->
             if (height == 0) {
-                sum += getPathCount(x, y)
-                peakBuffer.clear()
+                if (distinctPaths) sum += getDistinctPathCount(x, y)
+                else {
+                    sum += getPathCount(x, y)
+                    peakBuffer.clear()
+                }
             }
         } }
         return sum
