@@ -53,6 +53,10 @@ fun main() {
     println("The solution for day 10 part 1 is $d10p1")
     println("The solution for day 10 part 2 is $d10p2")
 
+    val solution11 = Day11("inputs/day11.txt")
+    (1..25).forEach { _ -> solution11.blink() }
+    println("The solution for day 11 part 1 is " + solution11.stones.size)
+
     val endTime = System.nanoTime()
     println("Completed in " + (endTime - startTime) / 1000000 + "ms")
 }
